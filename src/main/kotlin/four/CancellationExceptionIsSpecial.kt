@@ -17,7 +17,10 @@ suspend fun main() {
 
         launch {
             delay(100)
-            throw CancellationException("Oops cancelled")
+            throw MyCoolException
         }
     }
 }
+
+
+object MyCoolException : CancellationException()
